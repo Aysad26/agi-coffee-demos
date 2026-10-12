@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Эфиопская Арабика — от истоков до вашей чашки. Золотой маршрут прямых поставок AGI.">
+  <title>AGI — Золотой маршрут</title>
+  <link rel="icon" href="./assets/agi-logo.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/font-1.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/world-map.webp" as="image">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="screen" id="screen">
+    <header class="header">
+      <img class="logo" src="./assets/agi-logo.svg" alt="AGI" width="44" height="48">
+      <span class="header-caption">КОФЕ С ИСТОРИЕЙ ПРОИСХОЖДЕНИЯ</span>
+      <span class="header-route">ЭФИОПИЯ <span aria-hidden="true">↗</span> РОССИЯ</span>
+    </header>
+    <section class="hero" aria-labelledby="title">
+      <div class="story">
+        <p class="eyebrow"><span></span>ПРЯМЫЕ ПОСТАВКИ</p>
+        <h1 id="title">Эфиопская Арабика <span class="dash">—</span><br>от истоков<br>до вашей чашки</h1>
+        <div class="description">
+          <h2>Эфиопия</h2>
+          <p>Мы специализируемся на прямых поставках органически выращенного зелёного кофе сорта Арабика из колыбели этого прекрасного напитка — Эфиопии.</p>
+        </div>
+        <div class="controls">
+          <button id="replay" class="replay"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>Повторить маршрут</button>
+          <button id="pause" class="pause" aria-label="Приостановить анимацию" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path id="pause-icon" d="M9 6v12M15 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        </div>
+      </div>
+      <div class="visual" id="visual">
+        <div class="ambient" aria-hidden="true"></div>
+        <svg class="map-scene" id="map-scene" viewBox="0 0 1140 750" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title map-description">
+          <title id="map-title">Из Эфиопии в Россию</title>
+          <desc id="map-description">Золотая линия соединяет Эфиопию и Россию на плоской карте мира. На переднем плане — контейнеровоз.</desc>
+          <defs>
+            <linearGradient id="gold" x1="665" y1="493" x2="690" y2="275" gradientUnits="userSpaceOnUse"><stop stop-color="#b78f4d"/><stop offset=".5" stop-color="#e9c88b"/><stop offset="1" stop-color="#c6a266"/></linearGradient>
+            <radialGradient id="point-light"><stop stop-color="#f2d5a0" stop-opacity=".62"/><stop offset=".22" stop-color="#d8ad66" stop-opacity=".25"/><stop offset="1" stop-color="#d8ad66" stop-opacity="0"/></radialGradient>
+            <filter id="spark-blur" x="-250%" y="-250%" width="600%" height="600%"><feGaussianBlur stdDeviation="3.2"/></filter>
+            <filter id="ship-shadow" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="0" dy="24" stdDeviation="15" flood-color="#000000" flood-opacity=".32"/></filter>
+          </defs>
+          <g id="cartography">
+            <image href="./assets/world-map.webp" x="0" y="0" width="1140" height="750" preserveAspectRatio="none"/>
+          </g>
+          <g id="map-route" aria-hidden="true">
+            <path class="route-soft" id="route-soft" d="M665 493 C575 425 590 335 690 275" fill="none" stroke="#d9ae65" stroke-width="5.5" opacity=".07" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0" stroke-linecap="round"/>
+            <path id="route-line" d="M665 493 C575 425 590 335 690 275" fill="none" stroke="url(#gold)" stroke-width="1.5" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0" stroke-linecap="round"/>
+            <g id="traveller" opacity="0"><circle r="9" fill="#f1c578" filter="url(#spark-blur)" opacity=".36"/><circle r="2.1" fill="#ffe4b2"/></g>
+          </g>
+          <g id="ship-layer" filter="url(#ship-shadow)">
+            <image href="./assets/ship.webp" x="360" y="420" width="680" height="334" preserveAspectRatio="xMidYMid meet"/>
+          </g>
+          <g id="map-labels" aria-hidden="true">
+            <g id="origin">
+              <circle cx="665" cy="493" r="30" fill="url(#point-light)"/>
+              <circle id="origin-pulse" cx="665" cy="493" r="13" fill="none" stroke="#cda668" stroke-width=".9" opacity=".38"/>
+              <circle cx="665" cy="493" r="11" fill="#211c16" fill-opacity=".8" stroke="#cda668" stroke-opacity=".35" stroke-width=".9"/>
+              <circle cx="665" cy="493" r="4" fill="#e8c78e"/>
+              <g class="label origin-label" transform="translate(638 483)"><path d="M0 9h-16" stroke="#c9a362" stroke-width=".8" opacity=".65"/><text x="-26" y="11" text-anchor="end">ЭФИОПИЯ</text><text x="-26" y="33" text-anchor="end" class="label-note">ИСТОКИ НАШЕЙ АРАБИКИ</text></g>
+            </g>
+            <g id="destination">
+              <circle cx="690" cy="275" r="34" fill="url(#point-light)"/>
+              <circle id="destination-pulse" cx="690" cy="275" r="13" fill="none" stroke="#cda668" stroke-width=".9" opacity=".38"/>
+              <circle cx="690" cy="275" r="11" fill="#211c16" fill-opacity=".8" stroke="#cda668" stroke-opacity=".35" stroke-width=".9"/>
+              <circle cx="690" cy="275" r="4" fill="#e8c78e"/>
+              <g class="label destination-label" transform="translate(718 265)"><path d="M0 9h16" stroke="#c9a362" stroke-width=".8" opacity=".65"/><text x="26" y="11">РОССИЯ</text><text x="26" y="33" class="label-note">ПРЯМЫЕ ПОСТАВКИ</text></g>
+            </g>
+          </g>
+        </svg>
+        <span class="scene-caption" aria-hidden="true"><span></span>ЭФИОПИЯ <svg viewBox="0 0 35 8" fill="none"><path d="M0 4h34m-4-3 4 3-4 3" stroke="currentColor" stroke-width=".8"/></svg> РОССИЯ</span>
+      </div>
+    </section>
+    <footer class="footer"><span>ОТ ПРОИСХОЖДЕНИЯ — К КАЧЕСТВУ</span><span class="route-note">Направление поставок показано схематично</span><span class="footer-index">AGI <span>01 / 01</span></span></footer>
+    <span class="sr-only" id="announcement" aria-live="polite"></span>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

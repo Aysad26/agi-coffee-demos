@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14120f">
+  <meta name="description" content="Эфиопская Арабика — от истоков до вашей чашки. Прямые поставки кофе AGI.">
+  <title>AGI — От истоков до вашей чашки</title>
+  <link rel="icon" href="./assets/agi-logo.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/font-0.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <main class="screen" id="screen">
+    <header class="header">
+      <img class="logo" src="./assets/agi-logo.svg" alt="AGI" width="44" height="48">
+      <span class="header-caption">КОФЕ С ИСТОРИЕЙ ПРОИСХОЖДЕНИЯ</span>
+      <span class="header-route">ЭФИОПИЯ <span aria-hidden="true">↗</span> РОССИЯ</span>
+    </header>
+    <section class="hero" aria-labelledby="title">
+      <div class="story">
+        <p class="eyebrow"><span class="eyebrow-line"></span> РОДИНА НАШЕГО КОФЕ</p>
+        <h1 id="title">Эфиопская Арабика <span class="dash">—</span><br>от истоков<br>до вашей чашки</h1>
+        <p class="intro">Мы специализируемся на прямых поставках органически выращенного зелёного кофе сорта Арабика из колыбели этого прекрасного напитка — Эфиопии.</p>
+        <div class="journey" aria-label="Направление поставок">
+          <button class="location is-active" id="ethiopia" aria-pressed="true" data-location="ethiopia"><span class="location-dot"></span><span><span class="location-name">Эфиопия</span><span class="location-note">Истоки вкуса</span></span></button>
+          <span class="journey-line" aria-hidden="true"><span></span></span>
+          <button class="location" id="russia" aria-pressed="false" data-location="russia"><span class="location-dot"></span><span><span class="location-name">Россия</span><span class="location-note">Прямые поставки</span></span></button>
+        </div>
+        <div class="controls">
+          <button class="replay" id="replay"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>Повторить путь</button>
+          <button class="pause" id="pause" aria-label="Приостановить анимацию" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path id="pause-icon" d="M9 6v12M15 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        </div>
+      </div>
+      <div class="visual" id="visual" role="group" aria-label="Интерактивный 3D-глобус: путь кофе из Эфиопии в Россию">
+        <div class="globe-halo" aria-hidden="true"></div>
+        <img id="fallback" class="fallback" src="./assets/world.svg" alt="Карта мира">
+        <div class="canvas-host" id="canvas-host"></div>
+        <div class="map-label" id="origin-label" aria-hidden="true"><span class="label-rule"></span><span>ЭФИОПИЯ<small>ИСТОКИ АРАБИКИ</small></span></div>
+        <div class="map-label destination" id="destination-label" aria-hidden="true"><span class="label-rule"></span><span>РОССИЯ<small>ПРЯМЫЕ ПОСТАВКИ</small></span></div>
+        <div class="ship-wrap" id="ship-wrap"><img class="ship" id="ship" src="./assets/ship.webp" alt="Контейнеровоз в тёплом боковом свете" width="1328" height="652" draggable="false"></div>
+        <span class="globe-caption" id="globe-caption"><svg viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M4 11h14m-3-3 3 3-3 3M7 8l-3 3 3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Поверните глобус</span>
+        <div class="loading" id="loading" aria-live="polite">Прокладываем путь<span></span></div>
+      </div>
+    </section>
+    <footer class="footer"><span>ОТ ПРОИСХОЖДЕНИЯ — К КАЧЕСТВУ</span><span class="route-note">Направление поставок показано схематично</span><span class="footer-index">AGI <span>01 / 01</span></span></footer>
+    <span class="sr-only" id="announcement" aria-live="polite"></span>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

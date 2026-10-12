@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1e6">
+  <meta name="description" content="Четыре сорта свежеобжаренного эфиопского кофе АгроГруппИнвест. Гравюрные иллюстрации вкусовых оттенков.">
+  <title>AGI · Engrave · Эфиопский кофе</title>
+  <link rel="preload" href="./assets/Onest.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/bag-yirgacheffe.webp" as="image">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="showcase" aria-label="Сорта свежеобжаренного кофе" aria-roledescription="карусель">
+  <header class="screen-heading"><p>Свежеобжаренный кофе</p></header>
+  <div class="product">
+    <div class="visual" id="visual" aria-label="Упаковка кофе и гравюры вкусовых оттенков">
+      <div id="visual-slides" class="visual-slides">
+        <div class="visual-layer" data-product="0">
+          <img class="art" src="./assets/jasmine.png" alt="" style="left:-2.195%;top:6.494%;width:31.098%;height:38.961%">
+          <img class="art" src="./assets/bergamot.png" alt="" style="left:67.683%;top:50.649%;width:30.488%;height:36.364%">
+          <img class="art" src="./assets/coffee-beans.png" alt="" style="left:4.878%;top:79.87%;width:15.854%;height:16.883%">
+          <div class="pack-position"><div class="pack-motion"><img class="pack" src="./assets/bag-yirgacheffe.webp" alt="Пачка кофе Эфиопия Йргачеффе" fetchpriority="high"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="details-stage" id="details-stage">
+      <section class="details" id="initial-details" aria-label="Эфиопия Йргачеффе">
+        <h1>Эфиопия Йргачеффе</h1>
+        <p class="process">В зернах · средняя обжарка<br>Обработка — мытая</p>
+        <p class="flavour">Цветочный, жасмин, бергамот</p>
+        <dl class="ratings"><div><dt>Плотность</dt><dd>3/5</dd></div><div><dt>Сладость</dt><dd>3/5</dd></div><div><dt>Кислотность</dt><dd>2/5</dd></div></dl>
+        <p class="weight">Масса нетто: 250 г / 1000 г</p>
+        <a class="order" href="mailto:office@agrogroupinvest.com?subject=Заказ%20кофе%20Эфиопия%20Йргачеффе">Заказать кофе</a>
+      </section>
+    </div>
+  </div>
+  <nav class="navigation" aria-label="Выбор сорта кофе">
+    <div class="varieties" role="group" aria-label="Сорта кофе">
+      <button class="variety active" data-slide="0" aria-pressed="true" type="button">Эфиопия Йргачеффе</button>
+      <button class="variety" data-slide="1" aria-pressed="false" type="button">Эфиопия Гуджи</button>
+      <button class="variety" data-slide="2" aria-pressed="false" type="button">Эфиопия Сидамо</button>
+      <button class="variety" data-slide="3" aria-pressed="false" type="button">Эфиопия Лекемпти</button>
+    </div>
+    <div class="arrows">
+      <button class="arrow" id="previous" type="button" aria-label="Предыдущий сорт"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m19 6-10 10 10 10"/></svg></button>
+      <button class="arrow" id="next" type="button" aria-label="Следующий сорт"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m13 6 10 10-10 10"/></svg></button>
+    </div>
+  </nav>
+  <div class="playback"><button id="playback" type="button" aria-label="Приостановить автоматическую смену" aria-pressed="false"><svg class="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10"/></svg><svg class="play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z"/></svg><span>Автосмена</span></button><span id="counter" aria-hidden="true">01 / 04</span></div>
+  <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

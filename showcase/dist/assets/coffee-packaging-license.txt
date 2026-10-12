@@ -1,0 +1,12 @@
+Coffee Packaging by walteraraujo
+https://sketchfab.com/3d-models/coffee-packaging-62e5f2ddf6f1437db4da89791a3200eb
+https://sketchfab.com/walteraraujo
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Adapted for AGI: narrower and thinner proportions, adjusted shoulder and top-seal height,
+smoothed mesh, removed original artwork, applied AGI photographic labels and new film material.
+The original GLB was supplied by the user. No endorsement is implied.
+
+Lighting environment: Studio Country Hall by Sergej Majboroda / Poly Haven.
+https://polyhaven.com/a/studio_country_hall — CC0.

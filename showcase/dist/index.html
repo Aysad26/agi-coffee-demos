@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1b1511">
+  <meta name="description" content="Четыре сорта эфиопского кофе от АгроГруппИнвест. Свежеобжаренный кофе собственного зерна.">
+  <title>Эфиопский кофе · АгроГруппИнвест</title>
+  <link rel="preload" href="./assets/label-yirgacheffe.webp" as="image">
+  <link rel="preload" href="./assets/agi-logo.svg" as="image">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <div class="preloader" id="preloader" hidden>
+    <div class="preloader-inner">
+      <img class="preloader-logo" src="./assets/agi-logo.svg" alt="АгроГруппИнвест" width="207" height="227">
+      <div class="preloader-bottom">
+        <div class="preloader-progress" role="progressbar" aria-label="Загрузка кофе" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <span class="preloader-percent" aria-hidden="true">00%</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    // A failed module or unavailable WebGL must never trap the static photo view.
+    document.getElementById('preloader').hidden=false;
+    document.documentElement.classList.add('is-loading');
+    window.agiPreloaderTimeout=setTimeout(function(){
+      document.getElementById('preloader').hidden=true;
+      document.documentElement.classList.remove('is-loading');
+      var content=document.querySelector('.showcase');
+      if(content){content.inert=false;content.removeAttribute('aria-busy');}
+    },20000);
+  </script>
+  <main class="showcase" aria-label="Сорта свежеобжаренного кофе" aria-roledescription="карусель">
+    <header class="screen-heading"><p>Свежеобжаренный кофе</p></header>
+    <div class="product">
+      <div class="visual-shell" id="visual-shell">
+      <div class="visual" id="visual" role="img" aria-label="Чёрная пачка кофе Эфиопия Йргачеффе с оригинальной этикеткой">
+        <img class="glow" src="./assets/figma-glow.png" alt="">
+        <div id="decor" class="decor" aria-hidden="true"></div>
+        <div id="canvas" class="canvas"></div>
+        <img id="fallback" class="fallback" src="./assets/bag-yirgacheffe.webp" alt="">
+        <div id="front-decor" class="decor foreground" aria-hidden="true"></div>
+        <a class="model-credit" href="./assets/coffee-packaging-license.txt" target="_blank" rel="noopener" title="Coffee Packaging — walteraraujo — CC BY 4.0">3D-модель</a>
+      </div>
+      </div>
+      <section class="details" id="details" aria-live="polite" aria-atomic="true">
+        <h1 id="title">Эфиопия Йргачеффе</h1>
+        <p class="process">В зернах · средняя обжарка<br>Обработка — <span id="process">мытая</span></p>
+        <p class="flavour" id="flavour">Цветочный, жасмин, бергамот</p>
+        <div class="rule"></div>
+        <dl class="ratings">
+          <div><dt>Плотность</dt><dd id="body-rating">3/5</dd></div>
+          <div><dt>Сладость</dt><dd id="sweet-rating">3/5</dd></div>
+          <div><dt>Кислотность</dt><dd id="acid-rating">2/5</dd></div>
+        </dl>
+        <p class="weight">Масса нетто: 250 г / 1000 г</p>
+        <a class="order" id="order" href="mailto:office@agrogroupinvest.com?subject=Заказ%20кофе%20Эфиопия%20Йргачеффе">Заказать кофе</a>
+      </section>
+    </div>
+    <nav class="navigation" aria-label="Выбор сорта кофе">
+      <div class="varieties" role="group" aria-label="Сорта кофе">
+        <button type="button" class="variety active" data-slide="0" aria-pressed="true">Эфиопия Йргачеффе</button>
+        <button type="button" class="variety" data-slide="1" aria-pressed="false">Эфиопия Гуджи</button>
+        <button type="button" class="variety" data-slide="2" aria-pressed="false">Эфиопия Сидамо</button>
+        <button type="button" class="variety" data-slide="3" aria-pressed="false">Эфиопия Лекемпти</button>
+      </div>
+      <div class="arrows" id="arrows"><button type="button" id="previous" class="arrow previous" aria-label="Предыдущий сорт"><img src="./assets/figma-imgArrow.svg" alt=""></button><button type="button" id="next" class="arrow" aria-label="Следующий сорт"><img src="./assets/figma-imgArrow.svg" alt=""></button></div>
+    </nav>
+    <p class="sr-only" id="announcement" role="status"></p>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
