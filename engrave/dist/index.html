@@ -8,7 +8,7 @@
   <title>AGI · Engrave · Эфиопский кофе</title>
   <link rel="preload" href="./assets/Onest.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="./assets/bag-yirgacheffe.webp" as="image">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20261013-side-arrows">
 </head>
 <body>
 <main class="showcase" aria-label="Сорта свежеобжаренного кофе" aria-roledescription="карусель">
@@ -34,6 +34,10 @@
         <a class="order" href="mailto:office@agrogroupinvest.com?subject=Заказ%20кофе%20Эфиопия%20Йргачеффе">Заказать кофе</a>
       </section>
     </div>
+  <div class="arrows" role="group" aria-label="Переключение сортов">
+      <button class="arrow" id="previous" type="button" aria-label="Предыдущий сорт"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m19 6-10 10 10 10"/></svg></button>
+      <button class="arrow" id="next" type="button" aria-label="Следующий сорт"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m13 6 10 10-10 10"/></svg></button>
+    </div>
   </div>
   <nav class="navigation" aria-label="Выбор сорта кофе">
     <div class="varieties" role="group" aria-label="Сорта кофе">
@@ -42,14 +46,10 @@
       <button class="variety" data-slide="2" aria-pressed="false" type="button">Эфиопия Сидамо</button>
       <button class="variety" data-slide="3" aria-pressed="false" type="button">Эфиопия Лекемпти</button>
     </div>
-    <div class="arrows">
-      <button class="arrow" id="previous" type="button" aria-label="Предыдущий сорт"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m19 6-10 10 10 10"/></svg></button>
-      <button class="arrow" id="next" type="button" aria-label="Следующий сорт"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m13 6 10 10-10 10"/></svg></button>
-    </div>
   </nav>
   <div class="playback"><button id="playback" type="button" aria-label="Приостановить автоматическую смену" aria-pressed="false"><svg class="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10"/></svg><svg class="play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5Z"/></svg><span>Автосмена</span></button><span id="counter" aria-hidden="true">01 / 04</span></div>
   <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
 </main>
-<script type="module" src="./app.js"></script>
+<script type="module" src="./app.js?v=20261013-side-arrows"></script>
 </body>
 </html>
