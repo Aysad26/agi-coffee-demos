@@ -26,7 +26,7 @@
 .product>.arrows>.arrow{flex:none;pointer-events:auto;box-shadow:0 4px 16px #1a141112}
 @media(max-width:760px){
   /* On narrow screens align the arrows with the image, above the product details. */
-  .product>.arrows{top:calc(min(100vw - 48px,460px)*0.4695122);left:-12px;right:-12px}
+  .product>.arrows{top:min(calc(46.95122vw - 22.53659px),215.98px);left:-12px;right:-12px;margin-left:0}
   .navigation{gap:0}
   .playback{margin-top:14px;width:100%}
   .playback #counter{display:inline}
