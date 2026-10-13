@@ -19,3 +19,15 @@
 @media(max-width:1100px) and (min-width:761px){.product{gap:36px;grid-template-columns:1fr 1fr}.details h1{font-size:clamp(29px,3.33vw,36px)}.navigation{gap:24px}.varieties{gap:10px}.variety{font-size:11px;padding:0 8px}.arrows{gap:10px}}
 @media(max-width:760px){.showcase{padding:26px 24px 24px;justify-content:flex-start}.screen-heading{font-size:13px;line-height:1.6}.product{grid-template-columns:1fr;gap:18px;margin-top:14px;flex:0}.visual{width:min(100%,460px);height:auto;aspect-ratio:820/770;justify-self:center}.details-stage{min-height:390px}.details{gap:18px}.details h1{font-size:clamp(29px,7.7vw,46px);white-space:normal}.process{font-size:15px;line-height:1.55}.flavour{font-size:18px;line-height:1.5;margin-top:0;min-height:54px}.ratings{min-height:67px;margin-top:0;gap:14px}.ratings dt{font-size:12px}.ratings dd{font-size:26px}.weight{font-size:14px}.order{width:100%;height:52px;font-size:14px}.navigation{margin-top:24px;padding-top:22px;gap:16px;flex-wrap:wrap;justify-content:space-between}.varieties{flex-basis:100%;grid-template-columns:repeat(2,1fr);gap:10px}.variety{height:44px;font-size:12px;padding:0 8px}.arrows{margin-left:auto}.arrow{height:46px;width:46px}.playback{margin-top:-33px;width:55%;height:30px}.playback #counter{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Side-mounted slide controls: centered against the product, not the navigation pills. */
+.product{position:relative}
+.product>.arrows{position:absolute;z-index:8;top:50%;left:calc(12px - clamp(24px,5.208vw,100px));right:calc(12px - clamp(24px,5.208vw,100px));transform:translateY(-50%);display:flex;align-items:center;justify-content:space-between;gap:0;pointer-events:none}
+.product>.arrows>.arrow{flex:none;pointer-events:auto;box-shadow:0 4px 16px #1a141112}
+@media(max-width:760px){
+  /* On narrow screens align the arrows with the image, above the product details. */
+  .product>.arrows{top:calc(min(100vw - 48px,460px)*0.4695122);left:-12px;right:-12px}
+  .navigation{gap:0}
+  .playback{margin-top:14px;width:100%}
+  .playback #counter{display:inline}
+}
