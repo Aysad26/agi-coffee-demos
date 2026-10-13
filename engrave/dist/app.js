@@ -86,8 +86,10 @@ document.addEventListener('keydown',event=>{if(event.altKey||event.ctrlKey||even
 document.getElementById('visual').addEventListener('pointerdown',event=>{if(event.pointerType!=='mouse')touchStart={x:event.clientX,y:event.clientY};});
 document.getElementById('visual').addEventListener('pointerup',event=>{if(!touchStart)return;const dx=event.clientX-touchStart.x,dy=event.clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3)request(controller.target+(dx<0?1:-1));});
 document.getElementById('visual').addEventListener('pointercancel',()=>{touchStart=null;});
-document.querySelector('.navigation').addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
-document.querySelector('.navigation').addEventListener('pointerleave',()=>{hovered=false;schedule();});
+for(const controls of document.querySelectorAll('.navigation, .arrows')){
+  controls.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse'){hovered=true;schedule();}});
+  controls.addEventListener('pointerleave',()=>{hovered=false;schedule();});
+}
 main.addEventListener('focusin',()=>{focused=true;schedule();});
 main.addEventListener('focusout',event=>{if(!main.contains(event.relatedTarget)){focused=false;schedule();}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)for(const a of activeAnimations)a.finish();schedule();});
